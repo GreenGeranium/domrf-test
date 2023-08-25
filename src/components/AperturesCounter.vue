@@ -7,7 +7,7 @@
         <form>
           <label>Ширина<input type="number" /> см</label>
           <label>Высота<input type="number" /> см</label>
-          <button @click="deleteAperture">Удалить</button>
+          <button @click="deleteAperture($event, index)">Удалить</button>
         </form>
       </li>
     </ul>
@@ -23,14 +23,17 @@ export default {
   },
   methods: {
     addAperture() {
-      this.apertures.push({});
+      this.apertures.push({
+        id: this.apertures.length + 1,
+        height: 0,
+        width: 0,
+      });
       console.log(this.apertures);
     },
     deleteAperture(event, id) {
       event.preventDefault();
-      this.apertures = this.apertures.filter((aperture) => {
-        return aperture.id !== id;
-      });
+      this.apertures.splice(id, 1);
+      console.log(this.apertures);
     },
   },
 };
