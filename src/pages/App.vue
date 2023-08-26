@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import SlabsCalculatorForm from "./components/SlabsCalculatorForm.vue";
+import SlabsCalculatorForm from "../widgets/SlabsCalculatorForm.vue";
 
 export default defineComponent({
   name: "App",

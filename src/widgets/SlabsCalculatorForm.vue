@@ -33,8 +33,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import WallForm from "@/components/WallForm.vue";
-import ResultsSection from "@/components/ResultsSection.vue";
+import WallForm from "@/entities/WallForm.vue";
+import ResultsSection from "@/entities/ResultsSection.vue";
 
 interface Aperture {
   id: number;
