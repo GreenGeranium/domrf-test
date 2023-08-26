@@ -26,18 +26,25 @@
     <ResultsSection :blocksAmount="blocksAmount"></ResultsSection>
   </form>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import WallForm from "@/components/WallForm.vue";
 import ResultsSection from "@/components/ResultsSection.vue";
 
+interface Aperture {
+  id: number;
+  height: number;
+  width: number;
+}
+
 export default defineComponent({
   name: "SlabsCalculatorForm",
   components: { WallForm, ResultsSection },
+
   data() {
     return {
       wallHeight: 0,
-      apertures: [],
+      apertures: [] as Aperture[],
       idCounter: 1,
       wallWidth: 0,
       idAperturesCounter: 1,
@@ -63,7 +70,7 @@ export default defineComponent({
       );
       console.log(this.blocksAmount);
     },
-    updateWallParams(newWallWidth, newWallHeight) {
+    updateWallParams(newWallWidth: number, newWallHeight: number) {
       this.wallWidth = newWallWidth;
       this.wallHeight = newWallHeight;
     },
@@ -74,7 +81,7 @@ export default defineComponent({
         width: 0,
       });
     },
-    deleteAperture(index) {
+    deleteAperture(index: number) {
       this.apertures.splice(index, 1);
     },
   },

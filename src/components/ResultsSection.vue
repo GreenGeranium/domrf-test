@@ -4,14 +4,21 @@
     <p>Общий вес стены: {{ totalWallWeight }} кг</p>
   </div>
 </template>
-<script>
-export default {
-  props: ["blocksAmount"],
-  name: "ResultsSection",
-  computed: {
-    totalWallWeight() {
-      return this.blocksAmount * 36;
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  props: {
+    blocksAmount: {
+      type: Number,
     },
   },
-};
+  name: "ResultsSection",
+  computed: {
+    totalWallWeight(): number {
+      return (this.blocksAmount ?? 0) * 36;
+    },
+  },
+});
 </script>

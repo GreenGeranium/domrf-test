@@ -12,10 +12,13 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "WallForm",
-  props: ["wallHeight", "wallWidth"],
+  props: {
+    wallHeight: Number,
+    wallWidth: Number,
+  },
   data() {
     return {
       localWallHeight: 0,
