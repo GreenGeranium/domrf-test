@@ -1,19 +1,14 @@
 <template>
   <h1>Калькулятор ПГП</h1>
-  <WallForm></WallForm>
-  <AperturesCounter></AperturesCounter>
+  <SlabsCalculatorForm />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import WallForm from "./components/WallForm.vue";
-import AperturesCounter from "./components/AperturesCounter.vue";
+import SlabsCalculatorForm from "./components/SlabsCalculatorForm.vue";
 
 export default defineComponent({
   name: "App",
-  components: {
-    WallForm,
-    AperturesCounter,
-  },
+  components: { SlabsCalculatorForm },
 });
 </script>

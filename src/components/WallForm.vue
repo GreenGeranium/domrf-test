@@ -3,11 +3,11 @@
     <h2>Стена</h2>
     <label>
       Введите ширину стены:
-      <input type="number" @input="heightInput" /> см
+      <input type="number" v-model="localWallWidth" @input="emitUpdate" /> см
     </label>
     <label>
       Введите высоту стены:
-      <input type="number" @input="widthInput" /> см
+      <input type="number" v-model="localWallHeight" @input="emitUpdate" /> см
     </label>
   </form>
 </template>
@@ -15,18 +15,16 @@
 <script>
 export default {
   name: "WallForm",
+  props: ["wallHeight", "wallWidth"],
   data() {
     return {
-      wallHeight: 0,
-      wallWidth: 0,
+      localWallHeight: 0,
+      localWallWidth: 0,
     };
   },
   methods: {
-    heightInput(event) {
-      this.$data.wallHeight = event.target.value;
-    },
-    widthInput(event) {
-      this.$data.wallWidth = event.target.value;
+    emitUpdate() {
+      this.$emit("updateWallParams", this.localWallWidth, this.localWallHeight);
     },
   },
 };
