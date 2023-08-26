@@ -12,7 +12,7 @@
   </form>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: "WallForm",
   props: {
@@ -32,3 +32,19 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.wall-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  margin: 0;
+  grid-area: wall;
+
+  h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 30px;
+  }
+}
+</style>
