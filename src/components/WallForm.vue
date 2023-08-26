@@ -17,16 +17,16 @@ export default {
   name: "WallForm",
   data() {
     return {
-      height: 0,
-      width: 0,
+      wallHeight: 0,
+      wallWidth: 0,
     };
   },
   methods: {
     heightInput(event) {
-      this.$data.height = event.target.value;
+      this.$data.wallHeight = event.target.value;
     },
     widthInput(event) {
-      this.$data.width = event.target.value;
+      this.$data.wallWidth = event.target.value;
     },
   },
 };
